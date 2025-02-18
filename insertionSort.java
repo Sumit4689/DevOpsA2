@@ -16,7 +16,7 @@ public class insertionSort {
     }
     public static void main(String[] args) {
         int[] myArray = {4,2,6,8,12,1};
-
+        int size = 6;
         Sort(myArray, size);
 
         for (int i = 0; i < size; i++) {
