@@ -2,22 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Build in Progress'
-                bat 'javac insertionSort.java'
-            }
-        }
-        stage('Test'){
-            steps{
-                echo "Testing in progress"
-        
-            }
-        }
         stage('Deploy') {
             steps{
                 echo "Deploying"
-                bat 'java insertionSort'
+                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
         }
     }
