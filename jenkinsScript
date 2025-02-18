@@ -5,16 +5,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build in Progress'
+                bat 'javac insertionSort.java'
             }
         }
         stage('Test'){
             steps{
                 echo "Testing in progress"
+        
             }
         }
         stage('Deploy') {
             steps{
                 echo "Deploying"
+                bat 'java insertionSort'
             }
         }
     }
